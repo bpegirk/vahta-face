@@ -1,0 +1,21 @@
+{
+  "socket": {
+    "host": "10.100.11.205",
+    "port": 2000
+  },
+  "db": {
+    "host": "10.100.3.205",
+    "port": 3050,
+    "user": "SYSDBA",
+    "password": "masterkey",
+    "database": "c:/Program Files/FortNet/db/FORTNET.FDB"
+  },
+  "frames": [
+    {
+      "hardware_id": 232
+    },
+    {
+      "hardware_id": 234
+    }
+  ]
+}
