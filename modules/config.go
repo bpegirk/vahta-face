@@ -1,4 +1,4 @@
-package config
+package modules
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-var configuration = Configuration{}
+var Cfg = Configuration{}
 
 type FrameConfig struct {
 	HardwareId int `json:"hardware_id"`
@@ -30,8 +30,8 @@ type Configuration struct {
 	Frames []FrameConfig `json:"frames"`
 }
 
-func initConfig() {
-	filename := "config.json"
+func InitConfig() {
+	filename := "./config.json"
 	jsonFile, err := os.Open(filename)
 	defer jsonFile.Close()
 	if err != nil {
@@ -44,7 +44,7 @@ func initConfig() {
 		fmt.Printf("failed to read json file, error: %v", err)
 		return
 	}
-	err = json.Unmarshal(jsonData, &configuration)
+	err = json.Unmarshal(jsonData, &Cfg)
 	if err != nil {
 		fmt.Println("Error decode config")
 		panic(err)
